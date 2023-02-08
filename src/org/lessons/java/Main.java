@@ -36,9 +36,9 @@ public class Main {
 			try (PreparedStatement ps=con.prepareStatement(sql)){
 				//posso utilizzare il preparestatement (istruzione che devo eseguire)
 				
-				ps.setString(1, "'%"+inputUser+"%'");
+				ps.setString(1, "%"+inputUser+"%");
 
-					try(ResultSet rs = ps.executeQuery(sql)) {
+					try(ResultSet rs = ps.executeQuery()) {
 						//posso utilizzare resultSet (risultato dell'istruzione)
 						
 						while (rs.next()) { //fintanto c'è qualcosa da leggere
